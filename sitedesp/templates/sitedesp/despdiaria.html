@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sitedesp/css/despdiaria.css' %}">
+    <title>Despesa diária</title>
+</head>
+
+<body>
+
+    <h1 id="title">Despesa diária</h1>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h3 id="dia"></h3>
+            <h3 id="investim"></h3>
+
+            <h2>Total a gastar</h2>
+            <h3 id="totalgast"></h3>
+
+            <h2>Total diário</h2>
+            <h3 id="diariogast"></h3>
+
+            <hr>
+
+            <h3><b>Gastar</b></h3>
+            <input id="gast" placeholder="Digite o valor a usar">
+
+            <button id="d">Calcular</button>
+
+            <h3 id="valortotal"></h3>
+
+            <hr>
+
+            <h3 id="exc"></h3>
+            <h3 id="valr"></h3>
+
+            <input id="sald" placeholder="Digite o valor a usar">
+            <button id="sld">Calcular</button>
+
+            <h3 id="vl"></h3>
+
+            <a class="btn-back" href="{% url 'calculo' %}">Voltar</a>
+
+        </div>
+
+    </div>
+
+    <script src="{% static 'sitedesp/js/despdiaria.js' %}"></script>
+
+</body>
+</html>

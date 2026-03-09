@@ -1,0 +1,53 @@
+{% load static %}
+ <html>
+<head>
+<meta name="viewport" 
+content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'sitedesp/css/calculo.css' %}">
+<h1 id="title">Despesa<h1>
+</head>
+
+
+    <div class="container">
+
+        <!-- CARD SALÁRIO -->
+        <div class="card">
+            <h2>Salário</h2>
+
+            <input id="capital1" placeholder="Digite o capital bruto">
+            <input id="gast" placeholder="Digite o valor a usar">
+
+            <button id="di">Calcular</button>
+
+            <h3 id="valorsa1"></h3>
+            <h3 id="valorsa2"></h3>
+
+            <span id="inputt"></span>
+            <span id="but"></span>
+
+            <h3 id="resu"></h3>
+        </div>
+
+        <!-- CARD ORÇAMENTO -->
+        <div class="card">
+            <h2>Orçamento de gasto</h2>
+
+            <h3 id="vlrusar"></h3>
+
+            <input id="porct" placeholder="Digite a porcentagem">
+            
+            {% csrf_token %}
+             <div id="diasgast"></div>
+
+            <button id="dii">Calcular</button>
+
+            <h3 id="valor"></h3>
+            <div id="valor2"></div>
+        </div>
+
+    </div>
+
+    <a class="btn-start" href="{% url 'despesa' %}">Começar</a>
+
+    <script src="{% static 'sitedesp/js/calculo.js' %}"></script>
+</body>

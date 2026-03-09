@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+#title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* CARDS */
+.card {
+    background: #fff;
+    width: 420px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TÍTULOS */
+.card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* BOTÕES */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+/* RESULTADOS */
+h3 {
+    margin-top: 10px;
+    color: #444;
+}
+
+/* BOTÃO COMEÇAR */
+.btn-start {
+    display: block;
+    width: 200px;
+    margin: 30px auto 0;
+    text-align: center;
+    padding: 12px;
+    background: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-start:hover {
+    background: #27ae60;
+}
