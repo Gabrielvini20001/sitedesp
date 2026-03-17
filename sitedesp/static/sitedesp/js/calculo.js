@@ -62,10 +62,11 @@ input2.id = "inputmanuall";
 // =======================
 // VARIÁVEIS
 // =======================
+let valor=0
 let valores = 0;
 let vlpct = 0;
 let inves = 0;
-
+let usar = 0;
 // =======================
 // EVENTO 1 – SALÁRIO
 // =======================
@@ -92,6 +93,7 @@ botaover1.addEventListener("click", () => {
     
     document.getElementById("valorsa1").textContent =
         `porcentagem atingida: ${vlpct.toFixed(2)}%, restante salario: ${valores.toFixed(2)}$`;
+
 });
 
 // =======================
@@ -108,14 +110,26 @@ butt.addEventListener("click", () => {
 
     if (select.value === "0") {
         inves += valor;
+        
+         const restanteinvest=inves - valores
+        
         localStorage.setItem("investi", JSON.stringify(inves));
+        localStorage.setItem("restinvest", restanteinvest);
         document.getElementById("resu").textContent =
-            `Investimento: ${inves.toFixed(2)}`;
-    } else {
+            `Investimento: ${inves.toFixed(2)}, Restante:${restanteinvest.toFixed(2)}`;
+    }   else if (select.value === "1"){
+
+        usar += valor;
+        const restinvest=localStorage.getItem("restinvest");
+        const restinv=valor - restinvest
         localStorage.setItem("usar", valor);
-        document.getElementById("vlrusar").textContent = valor;
+        document.getElementById("vlrusar").textContent = usar;
+        document.getElementById("resu").textContent = restinv;
+    } else {
+
     }
-});
+}
+);
 
 // =======================
 // EVENTO 2 – CÁLCULO POR DIAS
@@ -138,10 +152,10 @@ botaover2.addEventListener("click", () => {
     localStorage.setItem("valortotal", JSON.stringify(valorTotal));
     localStorage.setItem("valordiario", JSON.stringify(valorDiario));
     localStorage.setItem("diasemana", JSON.stringify(diaSemana));
-    
+    localStorage.setItem("porcent", JSON.stringify(pct));
     
     // Capturar o valor selecionado quando mudar a opção
-
+  n  
 });
 
 let valoresSelecionados = [];

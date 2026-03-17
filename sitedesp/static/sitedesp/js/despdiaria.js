@@ -11,15 +11,33 @@ const dd=JSON.parse(d);
 const lg=localStorage.getItem("valordiario");
 const llg=JSON.parse(lg)
 
- 
+const porct=localStorage.getItem("porcent");
+const prct=JSON.parse(porct)
 
 const diassemana=localStorage.getItem("valoresSelecionados");
 const semana=JSON.parse(diassemana)
 
-const data=new Date();
- let dia = semana[data.getDay()];
 
-  document.getElementById("dia").textContent=dia;
+const dias=[
+    "domingo",
+    "segunda",
+    "terça",
+    "quarta",
+    "quinta",
+    "sexta",
+    "sabado",
+    
+]
+
+const data=new Date();
+ const hojee=data.getDay(semana)
+ const hoje = dias[hojee];
+
+ if( semana.includes(hoje)){
+  
+  document.getElementById("dia").textContent=hoje;
+ }
+  
 
   document.getElementById("totalgast").textContent=dd;
  
@@ -67,7 +85,7 @@ const data=new Date();
  
   
   
-  if(porcent >= 80){
+  if(porcent >= prct){
         valor.style.color ="red";
       exc.textContent="Limite excedido";
        exc.style.color ="red"; 
