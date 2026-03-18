@@ -1,10 +1,16 @@
 // =======================
-// CAPTURA DE ELEMENTOS DO DOM
+// CAPTURA DE ELEMENTOS 
 // =======================
+
+//BOTÕES CALCULAR
 const botaover1 = document.getElementById("di");
 const botaover2 = document.getElementById("dii");
-const inpt = document.getElementById("inputt");
 const but = document.getElementById("but");
+
+//INPUT
+const inpt = document.getElementById("inputt");
+
+//DIAS GASTOS 
 const diass = document.getElementById("diasgast");
 
 // =======================
@@ -26,7 +32,7 @@ input.type = "number";
 input.placeholder = "digite a %";
 input.id = "inputmanual";
 
-// Botão
+// Botão CALCULAR INVESTIR/USAR
 const butt = document.createElement("button");
 butt.textContent = "ok";
 
@@ -60,13 +66,14 @@ input2.placeholder = "Quantidade de dias";
 input2.id = "inputmanuall";
 
 // =======================
-// VARIÁVEIS
+// VARIÁVEIS DE CONTAGEM
 // =======================
 let valor=0
 let valores = 0;
 let vlpct = 0;
 let inves = 0;
 let usar = 0;
+
 // =======================
 // EVENTO 1 – SALÁRIO
 // =======================
@@ -92,7 +99,7 @@ botaover1.addEventListener("click", () => {
     diass.append(select2);
     
     document.getElementById("valorsa1").textContent =
-        `porcentagem atingida: ${vlpct.toFixed(2)}%, restante salario: ${valores.toFixed(2)}$`;
+        `Porcentagem atingida: ${vlpct.toFixed(2)}%, Salario: ${valores.toFixed(2)}$`;
 
 });
 
@@ -134,6 +141,7 @@ butt.addEventListener("click", () => {
 // =======================
 // EVENTO 2 – CÁLCULO POR DIAS
 // =======================
+
 botaover2.addEventListener("click", () => {
 
     const usar = Number(localStorage.getItem("usar"));
@@ -153,17 +161,24 @@ botaover2.addEventListener("click", () => {
     localStorage.setItem("valordiario", JSON.stringify(valorDiario));
     localStorage.setItem("diasemana", JSON.stringify(diaSemana));
     localStorage.setItem("porcent", JSON.stringify(pct));
+    document.getElementById("valor2").textContent = ``;
+    document.getElementById("valor").textContent = `Valor Total a gastar:${valorTotal}, Valor diario a gastar:${valorDiario}, Dias de gastar:${diaSemana}` ;
+
     
-    // Capturar o valor selecionado quando mudar a opção
-  n  
+   
 });
 
+// Capturar o valor selecionado quando mudar a opção
 let valoresSelecionados = [];
+
+// =======================
+// EVENTO 3 – MUDANÇA DE SELECT 
+// =======================
 
 select2.addEventListener("change", function() {
     const valorSelecionado = select2.value;  // Captura o valor da opção selecionada
     
-    document.getElementById("valor2").textContent=`Dia selecionado:", ${valorSelecionado}`;  
+   
     valoresSelecionados.push(valorSelecionado);
 
     // Se o array tiver mais de 5 valores, remove o primeiro (mantém os últimos 5)
@@ -176,10 +191,9 @@ select2.addEventListener("change", function() {
     localStorage.setItem('valoresSelecionados', JSON.stringify(valoresSelecionados));
 
     // Exibe o valor selecionado atual
-    document.getElementById("valor2").textContent = `Dia selecionado: ${valorSelecionado}`;
+    document.getElementById("valor2").textContent = `Dia selecionado: ${valoresSelecionados}`;
 
-    // Exibe os 5 últimos valores
-    console.log("Últimos 5 valores selecionados: ", valoresSelecionados);
+    
     
 });
 

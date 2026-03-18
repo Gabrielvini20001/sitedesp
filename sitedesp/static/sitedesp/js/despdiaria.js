@@ -1,10 +1,17 @@
+// =======================
+// BOTÕES CALCULAR 
+// =======================
 const botaover=document.getElementById("d");
 const botaosld=document.getElementById("sld");
+
+//VARIAVEIS DE CONTAGEM 
 let saldo=0;
 let porcent=0;
-
 let vl=0;
 
+// =======================
+// RESGATAR DADOS DO LOCAL STORAGE
+// =======================
 const d=localStorage.getItem("valortotal");
 const dd=JSON.parse(d);
 
@@ -17,7 +24,7 @@ const prct=JSON.parse(porct)
 const diassemana=localStorage.getItem("valoresSelecionados");
 const semana=JSON.parse(diassemana)
 
-
+//SELEÇÃO DO METODO DATA
 const dias=[
     "domingo",
     "segunda",
@@ -28,28 +35,34 @@ const dias=[
     "sabado",
     
 ]
-
+//COMPARANDO O METODO DATA COM O LOCAL STORAGE
 const data=new Date();
  const hojee=data.getDay(semana)
  const hoje = dias[hojee];
+
+
+// EXIBINDO DIAS DA SEMANA QUE SE ENQUADRA NO METODO DATA
 
  if( semana.includes(hoje)){
   
   document.getElementById("dia").textContent=hoje;
  }
   
-
+  //EXIBINDO DADOS DE  TOTAL A GASTAR E GASTO DIARIO DO LOCAL STORAGE
   document.getElementById("totalgast").textContent=dd;
  
   document.getElementById("diariogast").textContent=llg;
 
+  //EXIBINDO INVESTIMENTO
   const invt=localStorage.getItem("investi");
 
   document.getElementById("investim").textContent=`investimento:${invt}`
 
   
          
- 
+// =======================
+// BOTÃO CLICK
+// =======================
   const bot=botaover.addEventListener("click", ()=>{ 
     
 

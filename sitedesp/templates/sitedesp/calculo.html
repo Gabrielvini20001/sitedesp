@@ -1,5 +1,5 @@
 {% load static %}
- <html>
+<html>
 <head>
 <meta name="viewport" 
 content="width=device-width, initial-scale=1.0">
@@ -30,19 +30,19 @@ content="width=device-width, initial-scale=1.0">
 
         <!-- CARD ORÇAMENTO -->
         <div class="card">
-            <h2>Orçamento de gasto</h2>
+            <h2>Orçamento de gasto diario </h2>
 
             <h3 id="vlrusar"></h3>
 
             <input id="porct" placeholder="Digite a porcentagem">
             
             {% csrf_token %}
-             <div id="diasgast"></div>
-
+             <div id="diasgast"></div>  <div id="valor2"></div>
+               
             <button id="dii">Calcular</button>
 
             <h3 id="valor"></h3>
-            <div id="valor2"></div>
+            
         </div>
 
     </div>
