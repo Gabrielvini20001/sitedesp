@@ -158,6 +158,7 @@ botaover2.addEventListener("click", () => {
     const valorDiario = valorTotal / dias;
     
     localStorage.setItem("valortotal", JSON.stringify(valorTotal));
+    localStorage.setItem("quantdias", JSON.stringify(dias));
     localStorage.setItem("valordiario", JSON.stringify(valorDiario));
     localStorage.setItem("diasemana", JSON.stringify(diaSemana));
     localStorage.setItem("porcent", JSON.stringify(pct));

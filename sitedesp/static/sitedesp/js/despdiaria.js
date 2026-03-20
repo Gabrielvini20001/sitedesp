@@ -24,6 +24,7 @@ const prct=JSON.parse(porct)
 const diassemana=localStorage.getItem("valoresSelecionados");
 const semana=JSON.parse(diassemana)
 
+ const quantdias=Number(localStorage.getItem("quantdias"));
 //SELEÇÃO DO METODO DATA
 const dias=[
     "domingo",
@@ -40,26 +41,53 @@ const data=new Date();
  const hojee=data.getDay(semana)
  const hoje = dias[hojee];
 
-
+const quantsem = semana.length;
 // EXIBINDO DIAS DA SEMANA QUE SE ENQUADRA NO METODO DATA
 
  if( semana.includes(hoje)){
+ 
+  //capturando a quantidade de dias/semana
   
+  
+
+
   document.getElementById("dia").textContent=hoje;
  }
   
+  if( quantsem > quantdias){
+
+
+
+  }
+
+
+
+
   //EXIBINDO DADOS DE  TOTAL A GASTAR E GASTO DIARIO DO LOCAL STORAGE
-  document.getElementById("totalgast").textContent=dd;
+  const totalgast=document.getElementById("totalgast").textContent=dd;
  
-  document.getElementById("diariogast").textContent=llg;
+  const totaldiario=document.getElementById("diariogast").textContent=llg;
 
   //EXIBINDO INVESTIMENTO
   const invt=localStorage.getItem("investi");
 
   document.getElementById("investim").textContent=`investimento:${invt}`
 
-  
-         
+    
+   // Recuperar os valores salvos no localStorage ao carregar a página
+window.onload = function() {
+
+    // Preencher os campos com os valores salvos
+    if (dd) {
+        totalgast.value = dd;
+    }
+
+    if (llg) {
+        totaldiario.value = llg;
+    }
+};
+
+
 // =======================
 // BOTÃO CLICK
 // =======================
@@ -87,7 +115,9 @@ const data=new Date();
     // subtração acumulada
     saldo = saldo - desp;
 
-  
+
+
+
   
 //exibindo todo o valor
   const valor=document.getElementById("valortotal");
@@ -116,4 +146,5 @@ const data=new Date();
   const sald=document.getElementById("sald").value;
   const saldd=num - sald;
   document.getElementById("vl").textContent=saldd; 
+
 });
